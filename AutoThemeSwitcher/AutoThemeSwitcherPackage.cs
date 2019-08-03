@@ -178,23 +178,23 @@ namespace AutoThemeSwitcher
                 throw new ArgumentNullException(nameof(themeID));
             }
 
-            using (var key = UserRegistryRoot.OpenSubKey(@"ApplicationPrivateSettings\Microsoft\VisualStudio", true))
-                if (key != null)
+            var key = UserRegistryRoot.OpenSubKey(@"ApplicationPrivateSettings\Microsoft\VisualStudio", true);
+            if (key != null)
+            {
+                object oldColorTheme = key.GetValue("ColorTheme");
+                object oldColorThemeNew = key.GetValue("ColorThemeNew");
+                object newColorTheme = "0*System.String*" + themeID.Trim('{', '}');
+                object newColorThemeNew = "0*System.String*" + themeID;
+                if (oldColorTheme != newColorTheme || oldColorThemeNew != newColorThemeNew)
                 {
-                    object oldColorTheme = key.GetValue("ColorTheme");
-                    object oldColorThemeNew = key.GetValue("ColorThemeNew");
-                    object newColorTheme = "0*System.String*" + themeID.Trim('{', '}');
-                    object newColorThemeNew = "0*System.String*" + themeID;
-                    if (oldColorTheme != newColorTheme || oldColorThemeNew != newColorThemeNew)
-                    {
-                        key.SetValue("ColorTheme", newColorTheme);
-                        key.SetValue("ColorThemeNew", newColorThemeNew);
+                    key.SetValue("ColorTheme", newColorTheme);
+                    key.SetValue("ColorThemeNew", newColorThemeNew);
 
-                        NativeMethods.SendNotifyMessage(new IntPtr(NativeMethods.HWND_BROADCAST), NativeMethods.WM_SYSCOLORCHANGE, IntPtr.Zero, IntPtr.Zero);
+                    NativeMethods.SendNotifyMessage(new IntPtr(NativeMethods.HWND_BROADCAST), NativeMethods.WM_SYSCOLORCHANGE, IntPtr.Zero, IntPtr.Zero);
 
-                        //RestoreColorThemeAsync(key, oldColorTheme, oldColorThemeNew).FireAndForget();
-                    }
+                    RestoreColorThemeAsync(key, oldColorTheme, oldColorThemeNew).FireAndForget();
                 }
+            }
         }
 
         async Task RestoreColorThemeAsync(RegistryKey key, object oldColorTheme, object oldColorThemeNew)
