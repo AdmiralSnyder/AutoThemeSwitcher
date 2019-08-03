@@ -3,7 +3,10 @@
     <Metadata>
         <Identity Id="AutoThemeSwitcher.5cc1f72d-50f8-471f-abb4-aef42f312dd3" Version="1.0.2" Language="en-US" Publisher="Alexander Gayko" />
         <DisplayName>AutoThemeSwitcher</DisplayName>
-        <Description xml:space="preserve">Empty VSIX Project.</Description>
+        <Description xml:space="preserve">Automatically switches between VS Color Themes
+Put a .vstheme file in your solution root directory, and write the name of the theme you want in there. Then you can have a different theme for different branches.</Description>
+        <MoreInfo>https://github.com/AdmiralSnyder/AutoThemeSwitcher</MoreInfo>
+        <Preview>true</Preview>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
