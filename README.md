@@ -1,6 +1,8 @@
 # AutoThemeSwitcher
 automatically switches between VS themes
 
+Marketplace link: https://marketplace.visualstudio.com/items?itemName=AlexanderGayko.AutoThemeSwitcher
+
 put a .vstheme file in your solution, and write the name of the theme you want in there. 
 then you can have a different theme for different branches.
 
