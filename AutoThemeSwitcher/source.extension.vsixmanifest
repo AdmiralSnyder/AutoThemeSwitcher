@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="AutoThemeSwitcher.5cc1f72d-50f8-471f-abb4-aef42f312dd3" Version="1.0.2" Language="en-US" Publisher="Alexander Gayko" />
+        <Identity Id="AutoThemeSwitcher.5cc1f72d-50f8-471f-abb4-aef42f312dd3" Version="1.0.3" Language="en-US" Publisher="Alexander Gayko" />
         <DisplayName>AutoThemeSwitcher</DisplayName>
         <Description xml:space="preserve">Automatically switches between VS Color Themes
 Put a .vstheme file in your solution root directory, and write the name of the theme you want in there. Then you can have a different theme for different branches.</Description>

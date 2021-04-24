@@ -92,7 +92,8 @@ namespace AutoThemeSwitcher
                         {
                             if (themeKey != null)
                             {
-                                themes.Add((key, themeKey.GetValue(null)?.ToString()));
+                                if (themeKey.GetValue("")?.ToString() is string value)
+                                themes.Add((key, value));
                             }
                         }
                     }
