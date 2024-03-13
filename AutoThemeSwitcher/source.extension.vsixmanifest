@@ -8,10 +8,11 @@ Put a .vstheme file in your solution root directory, and write the name of the t
 
 NEW Version for VS2022</Description>
         <MoreInfo>https://github.com/AdmiralSnyder/AutoThemeSwitcher</MoreInfo>
+        <PreviewImage>ExtensionIcon.png</PreviewImage>
         <Preview>true</Preview>
     </Metadata>
     <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,)">
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
     </Installation>
